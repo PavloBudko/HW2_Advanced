@@ -1,38 +1,35 @@
-let firstNumber;
-let secondNumber;
-let firstNumberInteger;
-let secondNumberInteger;
+let inputFirstNumber = prompt(`Введіть перше число:`, 0);
+let inputSecondNumber = prompt(`Введіть друге число:`, 0);
+let firstNumber = Number(Math.trunc(inputFirstNumber));
+let secondNumber = Number(Math.trunc(inputSecondNumber));
 
-function integer(number) {
-  if ((Number.isInteger(Number(number)) && Number(number)) || !Number(number)) {
-    return true;
-  } else {
-    return false;
-  }
-}
+while ((isNaN(firstNumber)) || isNaN(secondNumber)) {
+    alert(`Спробуйте ще раз`);
+    inputFirstNumber = prompt(`Введіть перше число:`, 0);
+    inputSecondNumber = prompt(`Введіть друге число:`, 0);
 
-do {
-  firstNumber = +prompt("Введіть перше ціле число");
-  firstNumberInteger = integer(firstNumber);
-} while (!firstNumberInteger);
+    firstNumber = Number(Math.trunc(inputFirstNumber));
+    secondNumber = Number(Math.trunc(inputSecondNumber));
+};
 
-do {
-  secondNumber = +prompt("Введіть друге ціле число");
-  econdNumberInteger = integer(secondNumber);
-} while (!econdNumberInteger || firstNumber == secondNumber);
+const skipEvens = confirm(`Пропустим парні числа???`);
 
-const includeEven = confirm("Пропустим парні?");
-
-const maximumNumber = Math.max(firstNumber, secondNumber);
-const minmumNumber = Math.min(firstNumber, secondNumber);
+let biggestNumber;
+let smallestNumber;
+if (firstNumber > secondNumber) {
+    biggestNumber = firstNumber;
+    smallestNumber = secondNumber;
+} else {
+    biggestNumber = secondNumber;
+    smallestNumber = firstNumber;
+};
 let sum = 0;
+for (smallestNumber; smallestNumber <= biggestNumber; smallestNumber++) {
+    if (skipEvens) {
+        if (smallestNumber % 2 === 0) continue;
+    }
+    sum = sum + smallestNumber;
+};
 
-
-for (let i = minmumNumber; i <= maximumNumber; i++) {
-  if (includeEven && i % 2 === 0) {
-    continue;
-  }
-  sum += i;    
-}
-
-alert(`Сума ${sum}`);
+alert(`Сума чисел= ` + sum);
+console.log(sum);
