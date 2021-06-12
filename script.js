@@ -1,12 +1,12 @@
-let inputFirstNumber = prompt(`Введіть перше число:`, 0);
-let inputSecondNumber = prompt(`Введіть друге число:`, 0);
+let inputFirstNumber = prompt(`Введіть перше число:`);
+let inputSecondNumber = prompt(`Введіть друге число:`);
 let firstNumber = Number(Math.trunc(inputFirstNumber));
 let secondNumber = Number(Math.trunc(inputSecondNumber));
 
 while ((isNaN(firstNumber)) || isNaN(secondNumber)) {
     alert(`Спробуйте ще раз`);
-    inputFirstNumber = prompt(`Введіть перше число:`, 0);
-    inputSecondNumber = prompt(`Введіть друге число:`, 0);
+    inputFirstNumber = prompt(`Введіть перше число:`);
+    inputSecondNumber = prompt(`Введіть друге число:`);
 
     firstNumber = Number(Math.trunc(inputFirstNumber));
     secondNumber = Number(Math.trunc(inputSecondNumber));
