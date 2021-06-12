@@ -31,5 +31,5 @@ for (smallestNumber; smallestNumber <= biggestNumber; smallestNumber++) {
     sum = sum + smallestNumber;
 };
 
-alert(`Сума чисел= ` + sum);
+alert(`Сума чисел = ` + sum);
 console.log(sum);
